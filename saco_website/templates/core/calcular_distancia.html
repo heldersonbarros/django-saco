@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    {% if form.errors %}
+    {% for error in form.erros %}
+    <div class="alert alert-danger">
+        {{ error }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if messages %}
+
+    {% for message in messages %}
+    <ul class="successlist">
+        <li>{{message }}</li>
+    </ul>
+    {% endfor %}
+
+    {% endif %}
+
+
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Calcular">
+</form>
+
+{% endblock %}

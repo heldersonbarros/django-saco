@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>SACO - {{title}}</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav>
+            <ul class="side-nav">
+                <li>
+                    <a href="{% url 'cliente_list' %}">
+                        <i style="color: white" class="fa-solid fa-address-book fa-lg"></i>
+                        Clientes
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'funcionario_list' %}">
+                        <i style="color: white" class="fa fa-users fa-lg" aria-hidden="true"></i>
+                        Funcionarios
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'ordemServico_list' %}">
+                        <i style="color: white" class="fa-solid fa-book fa-lg"></i>
+                        Ordens de serviço
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'calcular_distancia' %}">
+                        <i style="color: white" class="fa-solid fa-map-location fa-lg"></i>
+                        Calcular distância
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <div class="content-title">
+                <h1>
+                    {% block title %}{% endblock %}
+                </h1>
+
+                {% block buttons %}{% endblock %}
+            </div>
+            <hr>
+
+            {% block content %}{% endblock %}
+        </div>
+    <div>
+</body>

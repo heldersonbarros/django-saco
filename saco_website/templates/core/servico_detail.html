@@ -1,0 +1,7 @@
+{{servico.descricao}}
+
+<ul>
+{% for item_servico in servico.item_servico.all %}
+    <li>{{item_servico.descricao}}</li>
+{% endfor %}
+</ul>

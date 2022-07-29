@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Cliente</th>
+        <th>Data de entrada</th>
+        <th>Data de conclusão</th>
+        <th>Data de saída</th>
+        <th>Responsável</th>
+        <th>Ação</th>
+    </tr>
+    {% for ordem_servico in ordemservico_list %}
+        <tr>
+            <td>{{ordem_servico.id}}</td>
+            <td>{{ordem_servico.cliente.pessoa.nome}}</td>
+            <td>{{ordem_servico.data_entrada}}</td>
+            <td>{{ordem_servico.data_conclusao}}</td>
+            <td>{{ordem_servico.data_saida}}</td>
+            <td>{{ordem_servico.responsavel.pessoa.nome}}</td>
+            <td><a class="update" href="{% url 'ordemServico_update' ordem_servico.id%}">Atualizar</a></td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+{% block buttons %}
+
+    <a class="create" href="{% url 'ordemServico_list' %}?atendido=true">Filtrar ordens não atendidas</a>
+
+    <a class="create" href="{% url 'ordemServico_create' %}">Adicionar ordem de serviço</a>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Cpf</th>
+        <th>Rg</th>
+        <th>Telefone</th>
+        <th>Data de admissão</th>
+        <th>Salário</th>
+        <th>Especialidade</th>
+        <th>Ação</th>
+    </tr>
+    {% for funcionario in funcionario_list %}
+    <tr>
+        <td>
+            <img class="rounded-image" src="{{funcionario.foto.url}}" alt="Foto do funcionário">
+            {{funcionario.pessoa.nome}}
+        </th>
+        <td>{{funcionario.pessoa.cpf}}</td>
+        <td>{{funcionario.pessoa.rg}}</td>
+        <td>{{funcionario.pessoa.Telefone}}</td>
+        <td>{{funcionario.data_admissao}}</td>
+        <td>{{funcionario.salario}}</td>
+        <td>{{funcionario.especialidade}}</td>
+        <td><a class="delete" href="{% url 'funcionario_delete' funcionario.pessoa_id%}">Deletar</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+{% block buttons %}
+
+    <a class="create" href="{% url 'funcionario_create' %}">Adicionar funcionário</a>
+
+{% endblock %}

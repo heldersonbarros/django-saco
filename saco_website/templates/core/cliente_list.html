@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Cpf</th>
+        <th>Rg</th>
+        <th>Telefone</th>
+        <th>Celular</th>
+        <th>Tipo</th>
+    </tr>
+    {% for cliente in cliente_list %}
+    <tr>
+        <td>
+            {{cliente.pessoa.nome}}
+        </th>
+        <td>{{cliente.pessoa.cpf}}</td>
+        <td>{{cliente.pessoa.rg}}</td>
+        <td>{{cliente.pessoa.telefone}}</td>
+        <td>{{cliente.celular}}</td>
+        <td>{{cliente.tipo}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+{% block buttons %}
+
+    <a class="create" href="{% url 'cliente_create' %}">Adicionar cliente</a>
+
+{% endblock %}

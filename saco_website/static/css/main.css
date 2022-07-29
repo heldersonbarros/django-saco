@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+body{
+    height: 100%;
+}
+
+nav{
+    display: flex;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    font-size: 14px;
+    width: 20%;
+    height: 100vh;
+}
+
+.wrapper{
+    display: flex;
+}
+
+.side-nav{
+    padding: 10vh 3vw;
+    width: 100%;
+}
+
+.side-nav li{
+    padding: 15px;
+    font-weight: bold;
+}
+
+.side-nav li a{
+    color: white;
+}
+
+.content {
+    padding-top: 10vh;
+    width: 80%;
+}
+
+.content-title{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+hr{
+    margin: 15px;
+}
+
+.content table{
+    border-collapse: collapse;
+    font-size: 12px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+th{
+    background-color: black;
+    margin: 5px;
+    color: white;
+    text-align: left;
+}
+
+th, td{
+    padding: 10px;
+}
+
+.delete{
+    background-color: red;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}
+
+.update{
+    background-color: darkblue;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input[type="submit"]{
+    margin-top: 20px;
+    font-size: medium;
+}
+
+.create, input[type="submit"]{
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.create:hover, input[type="submit"]:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+form{
+    margin: auto;
+    width: 50%;
+}
+
+input, select{
+    outline: none;
+    border: 1px solid gray;
+    margin: 10px 0px;
+    padding: 8px;
+    display: block;
+    width: 100%;
+}
+
+.errorlist li, .successlist li{
+    color: white;
+    text-align: center;
+    padding: 8px;
+    margin: 10px 0px;
+}
+
+.errorlist li{
+    background-color: darkred;
+}
+
+.successlist li{
+    background-color: darkgreen;
+}
+
+.rounded-image{
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+}

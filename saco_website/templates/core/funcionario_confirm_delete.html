@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Deletar funcionário{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+
+    <p>Você tem certeza que deseja deletar esse funcionario?</p>
+    <input type="submit" value="Deletar">
+</form>
+{% endblock %}

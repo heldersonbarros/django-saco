@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Adicionar cliente{% endblock %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{pessoa_form}}
+    {{funcionario_form}}
+    <input type="submit" value="Criar">
+</form>
+{% endblock %}
