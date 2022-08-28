@@ -7,5 +7,7 @@ O projeto foi feito após uma análise da proposta de um sistema para a constru�
 ## Tecnologias utilizadas
 
 - Django
+- HTML
+- CSS
 - PostgreSQL
 
